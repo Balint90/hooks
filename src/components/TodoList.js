@@ -18,14 +18,17 @@ const TodoList = () => {
     }
 
     return (
-        <div>
-            <AddNewTodo addTodo={addTodo} />
-            <ul>
+        <div className="row">
+            <div class="col-12 col-md-6">
+                <AddNewTodo addTodo={addTodo} />
+            </div>
+            <div class="col-12 col-md-6">
+            <ul className="list-group">
                 {todos.map((todo) => 
-                    <li key={todo.id}>{todo.text}</li>
+                    <li className="list-group-item" key={todo.id}>{todo.text}</li>
                 )}
             </ul>
-            
+            </div>
         </div>
     )
 }

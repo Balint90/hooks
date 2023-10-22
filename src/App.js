@@ -4,7 +4,9 @@ import TodoList from "./components/TodoList";
 function App() {
   return (
     <div className="App">
-      <TodoList />
+      <div class="container my-3">
+          <TodoList />
+      </div>
     </div>
   );
 }
