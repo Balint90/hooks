@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddNewTodo from "./AddNewTodo"
 import { v4 as uuidv4 } from 'uuid';
 
 const TodoList = () => {
@@ -9,23 +10,16 @@ const TodoList = () => {
         { text: 'Feed the dog', id: uuidv4() },
     ]);
 
-    const addTodo = () => {
-        const newTodoInput = document.getElementById('newTodo');
-        if(newTodoInput.value !== ''){
-            setTodos([
-                ...todos,
-                { text: newTodoInput.value, id: uuidv4() }
-            ]);
-            newTodoInput.value = '';
-        }
+    const addTodo = (text) => {
+        setTodos([
+            ...todos,
+            { text, id: uuidv4() }
+        ]);
     }
 
     return (
         <div>
-            <form>
-                <input type="text" id="newTodo" />
-            </form>
-            <button onClick={addTodo}>Add a todo</button>
+            <AddNewTodo addTodo={addTodo} />
             <ul>
                 {todos.map((todo) => 
                     <li key={todo.id}>{todo.text}</li>
