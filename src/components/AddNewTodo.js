@@ -21,7 +21,6 @@ const AddNewTodo = ({addTodo}) => {
                 </div>
                 <input className="mt-3 btn btn-primary" type="submit" value="Add new Todo" />
             </form>
-            
         </div>
     );
 }
